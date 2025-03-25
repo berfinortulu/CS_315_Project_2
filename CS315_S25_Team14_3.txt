@@ -1,0 +1,61 @@
+main() {
+
+    %+%
+    Test Program - Demonstrating:
+    1. Function Definitions and Calls
+    2. Loops: do-while, for, for_each
+    3. User Input & Output
+    4. Comments: Single-Line & Multi-Line
+    %+%
+
+    %% Function Definition %%
+    func max(REAL a, REAL b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    %% Array Declarations %%
+    REAL valuesA[] = [1.5, 2.8, 9.3, +4.6];
+    REAL valuesB[] = [3.2, 7.1, 0.5, -2.4];
+
+    %% Variable Declarations %%
+    REAL maxValue = 0;
+    REAL i = 0;
+
+    %% User Input Example %%
+    REAL userNum;
+    input("Enter a number: " >> userNum);
+
+    %+%
+    The do-while loop will execute at least once
+    even if the condition is false from the beginning.
+    This ensures that the user input is processed at least once.
+    %+%
+    do {
+        print("You entered: " + userNum);
+        userNum = userNum - 1;
+    } while (userNum > 0);
+
+    %% For Loop - Standard Counting Loop %% 
+    for (REAL i = 0; i < 3; i = i + 1) {
+        print("For Loop Iteration: "+ i);
+    }
+
+    %+%
+    Nested For-Each Loops:
+    - Iterating through `valuesA`
+    - Iterating through `valuesB`
+    - Calling `max(a, b)` to find the larger value
+    %+%
+    for_each(REAL a in valuesA) {
+        for_each(REAL b in valuesB) {
+            maxValue = max(a, b);
+            print("Comparing: a = " + a + ", b = " + b + " => maxValue = " + maxValue);
+        }
+    }
+
+    %% End of Test Program %%
+}

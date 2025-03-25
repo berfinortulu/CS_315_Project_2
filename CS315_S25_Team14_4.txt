@@ -1,0 +1,91 @@
+main() {
+    %% Test case to validate DB++  features %%
+
+    %+% 
+        This is a multi-line comment
+        Testing arithmetic, arrays, and loops
+    %+%
+
+    %% Variable Declarations %%
+    REAL x = 3.14;
+    REAL y = -2.0;
+    REAL z = 1e-5;
+    REAL piVal = pi;
+    REAL eVal = e;
+    REAL sqrt4 = root(4, 2);
+
+    %% Fixed-size array declaration %%
+    REAL numbers[5];
+
+    %% Assigning values to a fixed-size array %%
+    numbers[0] = 3.5;
+    numbers[1] = 2.5;
+    numbers[2] = 7.1;
+    numbers[3] = 1.2;
+    numbers[4] = -5.6;
+
+    %% Dynamic array declaration and initialization %%
+    REAL dynamicArr[] = [1.2, 3.4, 5.6];
+
+    %% Arithmetic Operations %%
+    REAL sum = x + y;
+    REAL product = x * y;
+    REAL power = x ^ 2;
+    REAL modulo = 7 % 2;
+
+    print("Sum: " + sum);
+    print("Product: " + product);
+    print("Power: " + power);
+    print("Modulo: " + modulo);
+
+    %% Relational Operations %%
+    if (x > y) {
+        print("x is greater than y");
+    }
+
+    if (z <= 1e-5 && y != -3.0) {
+        print("z is within expected range and y is not -3.0");
+    }
+
+    %% Logical Operations %%
+    REAL flag = 1; %% Using REAL type as a boolean equivalent %%
+    if (!flag) {
+        print("Flag is false");
+    } else {
+        print("Flag is true");
+    }
+
+    %% While Loop Example %%
+    REAL counter = 0;
+    while (counter < 5) {
+        print("Counter: " + counter);
+        counter = counter + 1;
+    }
+
+    %% Array Access Example %%
+    print("First element of numbers array: " + numbers[0]);
+    print("Third element of dynamic array: " + dynamicArr[2]);
+
+    %% Nested While Loop Example %%
+    REAL i = 0;
+    while (i < 3) {
+        REAL j = 0;
+        while (j < 2) {
+            print("i: " + i + ", j: " + j);
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    %% Function Call Example %%
+    print("Max Value: " + max(numbers[1], numbers[4]));
+}
+
+%% Function Definition %%
+func max(REAL a, REAL b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}

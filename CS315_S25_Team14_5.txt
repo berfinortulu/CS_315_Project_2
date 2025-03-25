@@ -1,0 +1,85 @@
+main() {
+
+    %+%
+    Comprehensive Test Program
+    Demonstrating:
+    - Variable & Array Declarations
+    - Assignments & Expressions
+    - Conditional Statements (if-elif-else)
+    - Loops (while, do-while, for, for_each)
+    - Functions & Function Calls
+    - Input & Output Operations
+    - Boolean & Arithmetic Expressions
+    - Comments (Single-Line & Multi-Line)
+    %+%
+
+    %% Variable Declarations %%
+    REAL a = 5.0, b = -3.2, c;
+    REAL piValue = pi;
+    REAL expValue = e;
+    REAL rootedVal = root(16, 2);
+
+    %% Array Declarations %%
+    REAL valuesA[] = [1.5, 2.8, 9.3, 4.6];
+    REAL valuesB[3] = [3.2, 7.1, 0.5];
+
+    %% Function Definition %%
+    func maxValue(REAL x, REAL y) {
+        if (x > y) {
+            return x;
+        } elif (x < y) {
+            return y;
+        } else {
+            return root(4,2); %% Return square root of 4 %%
+        }
+    }
+
+    %% Input Example %%
+    REAL userNum;
+    input("Enter a number: " >> userNum);
+
+    %% Loop: While %%
+    while (userNum > 0) {
+        print("Current Value: " + userNum);
+        userNum = userNum - 1;
+    }
+
+    %% Loop: Do-While %%
+    do {
+        print("Ensuring at least one execution.");
+        userNum = userNum + 1;
+    } while (userNum < 1);
+
+    %% Loop: For %%
+    for (REAL i = 0; i < 5; i = i + 1) {
+        print("For Loop Iteration: " + i);
+    }
+
+    %% Loop: For-Each %%
+    for_each (REAL num in valuesA) {
+        print("Iterating through valuesA: " + num);
+    }
+
+    %% Nested Loops & Function Calls %%
+    for_each (REAL x in valuesA) {
+        for_each (REAL y in valuesB) {
+            c = maxValue(x, y);
+            print("Comparing: x = " + x + ", y = " + y + " -> max = " + c);
+        }
+    }
+
+    %% Boolean Expressions & Conditional Statements %%
+    if ((a > b) && (piValue == pi)) {
+        print("a is greater than b and piValue is correctly assigned.");
+    } elif ((expValue != e) || (rootedVal > 3)) {
+        print("Checking irrational and rooted number calculations.");
+    } else {
+        print("Default case executed.");
+    }
+
+    %% Array Access %%
+    REAL indexValue = valuesA[2] * valuesB[1];
+    print("Multiplication of indexed array values: " + indexValue);
+
+    %% End of Test Program %%
+}

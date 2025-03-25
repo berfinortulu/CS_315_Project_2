@@ -1,0 +1,25 @@
+main(){
+    %% Prompt user to enter values for x, y, z %%
+    print("Enter values for x, y, and z: ");
+    
+    %% Variable Declaration %%
+    REAL x, y;    %% Multiple Declaration %%
+    REAL z;       %% Single Declaration %%
+    REAL f = 1;   %% Flag to do-while loop %%
+ 
+
+    %% Check if any of them is zero %%
+    do {
+        %% Read User Input %%
+        input("Enter x: " >> x);
+        input("Enter y: " >> y);
+        input("Enter z: " >> z);  
+	
+        if(x == 0 || y == 0 || z == 0) {
+	    print("Enter only non-zero values!!!");
+        } else {
+            f = 0;
+	    print("The product of x, y, and z is: " + (x * y * z));
+        }
+    } while (f);
+}
